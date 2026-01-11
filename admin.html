@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Panel de carga de puntos</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="admin.css"> <!-- Opcional -->
+</head>
+<body>
+  <h1>Cargar puntos al cliente</h1>
+
+  <form id="form-cargar-puntos">
+    <label for="correo">Correo del cliente:</label><br>
+    <input type="email" id="correo" required /><br><br>
+
+    <label for="monto">Monto gastado ($):</label><br>
+    <input type="number" id="monto" required /><br><br>
+
+    <button type="submit" class="btn btn--primary" aria-label="Cargar puntos">Cargar puntos</button>
+  </form>
+
+  <p id="mensajeResultado"></p>
+
+  <script type="module" src="js/admin.js"></script>
+
+</body>
+</html>

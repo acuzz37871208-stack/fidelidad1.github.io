@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="manifest" href="/manifest.json">
+     <meta name="theme-color" content="#2b6cb0">
+     <title>Registro</title>
+        <link rel="stylesheet" href="/css/style.css" /> <!--rel: relaciona a en este caso stylesheet, href es el link o ubicacion en este caso css/styles.css-->  
+</head>
+<body>
+<div class="login-wrapper">
+<form class="formulario container" id="registerForm" role="form" aria-labelledby="registerTitle">
+      <h1 id="registerTitle">Registrarme</h1> 
+      <div class="user-date">
+      <input type="text" id="nombre" name="name" class="form-control" autocomplete="name" required placeholder=" " />
+      <label for="nombre">Nombre</label>
+      <span class="error-msg">Este campo es obligatorio</span>
+      </div>
+      <div class="user-date">
+      <input type="email" id="correo" name="email" class="form-control" autocomplete="email" required placeholder=" " />
+      <label for="correo">Correo</label>
+      </div>
+      <div class="user-date">
+      <input type="password" id="contraseña" name="password" class="form-control" autocomplete="new-password" required placeholder=" " />
+      <label for="contraseña">Clave</label>
+      <span class="error-msg">Este campo es obligatorio</span>
+      </div>
+      <button type="submit" id="button-register" class="btn btn--primary" aria-label="Registrarme">Registrarme</button> <!--type nos indica el tipo de boton--> 
+      <div class="login">Quiero <a href="/ui-ux-updates/login.html"><u>Iniciar sesion</u></a>
+      </div>
+      </form>
+</div>
+      
+        <script type="module" src="/js/auth-register.js"></script>
+</body>
+</html>

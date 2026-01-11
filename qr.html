@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Generar QR — Mi Web</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body style="font-family:Arial,Helvetica,sans-serif;padding:2rem;max-width:800px;margin:0 auto;">
+  <h1>Generador de QR imprimible</h1>
+  <p>Genera un código QR que apunte a la URL que quieras (usa la URL pública final para imprimir).</p>
+
+  <label for="qr-url">URL a codificar</label>
+  <input id="qr-url" type="url" class="form-control" placeholder="https://ejemplo.com/login.html" aria-label="URL a codificar">
+
+  <label for="qr-size">Tamaño (px) — para impresión usa 1500 o 3000</label>
+  <select id="qr-size" class="form-control">
+    <option value="512">512</option>
+    <option value="1024" selected>1024</option>
+    <option value="1500">1500</option>
+    <option value="3000">3000</option>
+  </select>
+
+  <div style="display:flex;gap:.5rem;align-items:center;margin-bottom:1rem;">
+    <button type="button" id="generate-qr" class="btn" aria-label="Generar código QR" style="padding:.5rem 1rem">Generar QR</button>
+    <a id="download-qr" href="#" style="padding:.5rem 1rem;background:#2b6cb0;color:#fff;text-decoration:none;border-radius:4px;">Descargar PNG</a>
+    <button type="button" id="print-qr" class="btn" aria-label="Imprimir código QR" style="padding:.5rem 1rem">Imprimir</button>
+  </div>
+
+  <div style="text-align:center;border:1px solid #ddd;padding:1rem;">
+    <img id="qr-preview" alt="QR generado" style="max-width:100%;height:auto;background:white;" />
+  </div>
+
+  <p style="margin-top:1rem;color:#555;">Consejo: usa la URL pública HTTPS de tu sitio (por ejemplo desplegada en Firebase) para que cualquiera pueda escanear desde datos móviles sin depender del Wi‑Fi del local.</p>
+
+  <script src="js/qrious.min.js"></script>
+  <script src="js/qr.js"></script>
+  <script>
+    document.getElementById('print-qr').addEventListener('click', function(){
+      const w = window.open('');
+      w.document.write('<img src="'+document.getElementById('qr-preview').src+'" style="width:100%;max-width:1000px">');
+      w.print();
+      w.close();
+    });
+  </script>
+</body>
+</html>

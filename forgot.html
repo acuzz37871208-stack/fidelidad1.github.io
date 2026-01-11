@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Olvidé mi contraseña</title>
+    <link rel="stylesheet" href="css/style-forgot.css" />
+  </head>
+  <body>
+    <div class="contenedor">
+      <h1>Recuperar contraseña</h1>
+      <p>Ingresá tu email y recibirás un enlace para restablecer tu contraseña.</p>
+
+      <form id="form-forgot" role="form" aria-labelledby="forgotTitle">
+        <h1 id="forgotTitle" style="display:none">Recuperar contraseña</h1>
+        <input type="email" id="email" name="email" class="form-control" autocomplete="email" placeholder="Tu correo" required aria-describedby="mensaje" />
+        <button type="submit" class="btn btn--primary" aria-label="Enviar enlace de recuperación">Enviar enlace</button>
+      </form>
+
+      <p class="volver">
+        <a href="login.html">← Volver al inicio de sesión</a>
+      </p>
+
+      <p id="mensaje"></p>
+    </div>
+
+    <script type="module" src="js/forgot.js"></script>
+  </body>
+</html>

@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/catalogo.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo</title>
+</head>
+<body>
+<div class="topbar" role="region" aria-label="Barra superior"><h1>Exclusivo para clientes</h1></div>
+<div class="subbar" role="region" aria-label="Barra secundaria de búsqueda">
+  <div class="subbar-inner">
+    <span class="subbar-label">Awka liwen</span>
+    <input type="search" class="subbar-input form-control" placeholder="¿Qué estas buscando?" aria-label="Buscar en catálogo">
+    <button type="button" id="cartBtn" class="btn cart-btn" aria-label="Ver carrito" aria-expanded="false" aria-controls="cartModal">
+       🛒 <span class="cart-count" id="cartCount">0</span>
+    </button>
+    <a href="index.html" class="nav-link">Inicio</a>
+  </div></div>
+  <div class="Barra" role="region" aria-label="Barra tercera categorías">
+    <div class="cats-track" role="list">
+    <button type="button" role="listitem" class="cat-pill" data-cat="PIPAS" aria-pressed="false">PIPAS</button>
+    <button type="button" role="listitem" class="cat-pill" data-cat="PICADORES" aria-pressed="false">PICADORES</button>
+    <button type="button" role="listitem" class="cat-pill" data-cat="BONGS" aria-pressed="false">BONGS</button>
+    <button type="button" role="listitem" class="cat-pill" data-cat="PAPELES" aria-pressed="false">PAPELES</button>
+    <button type="button" role="listitem" class="cat-pill" data-cat="FILTROS" aria-pressed="false">FILTROS</button>
+    <button type="button" role="listitem" class="cat-pill" data-cat="ACC" aria-pressed="false">ACCESORIOS</button>
+    <button type="button" role="listitem" class="cat-pill" data-cat="EXTRA" aria-pressed="false">EXTRAS</button>
+    <button type="button" role="listitem" class="cat-pill more-btn" id="verMas" aria-expanded="false" aria-controls="moreCats">VER MÁS ▾</button>
+    </div>
+  </div>  
+<!-- Más categorías (panel modal) -->
+<div class="more-categories-panel" id="moreCats" aria-hidden="true" role="dialog" aria-label="Más categorías">
+  <div class="more-inner">
+    <button type="button" class="more-close" id="closeMore" aria-label="Cerrar">✕</button>
+    <h3>Categorías</h3>
+    <div class="more-grid">
+      <button type="button" role="listitem" class="cat-pill" data-cat="PIPAS" aria-pressed="false">PIPAS</button>
+      <button type="button" role="listitem" class="cat-pill" data-cat="PICADORES" aria-pressed="false">PICADORES</button>
+      <button type="button" role="listitem" class="cat-pill" data-cat="BONGS" aria-pressed="false">BONGS</button>
+      <button type="button" role="listitem" class="cat-pill" data-cat="PAPELES" aria-pressed="false">PAPELES</button>
+      <button type="button" role="listitem" class="cat-pill" data-cat="FILTROS" aria-pressed="false">FILTROS</button>
+      <button type="button" role="listitem" class="cat-pill" data-cat="ACC" aria-pressed="false">ACCESORIOS</button>
+      <button type="button" role="listitem" class="cat-pill" data-cat="EXTRA" aria-pressed="false">EXTRAS</button>
+      <button type="button" role="listitem" class="cat-pill" data-cat="LIMPIEZA" aria-pressed="false">LIMPIEZA</button>
+      <button type="button" role="listitem" class="cat-pill" data-cat="REGALOS" aria-pressed="false">REGALOS</button>
+      <button type="button" role="listitem" class="cat-pill" data-cat="PROMOS" aria-pressed="false">PROMOS</button>
+    </div>
+  </div>
+</div>
+
+<!-- Carrito (modal) -->
+<div class="cart-modal" id="cartModal" aria-hidden="true" role="dialog" aria-label="Carrito de compras">
+  <div class="cart-inner">
+    <button type="button" class="cart-close" id="closeCart" aria-label="Cerrar carrito">✕</button>
+    <h3>Tu carrito</h3>
+    <div class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-total">Total: <span id="cartTotal">$0.00</span></div>
+      <div class="cart-actions"><button type="button" id="clearCart" class="btn" aria-label="Vaciar carrito">Vaciar</button><button type="button" id="checkout" class="btn" aria-label="Proceder al pago">Pagar</button></div>
+    </div>
+  </div>
+</div>
+
+<section class="promo-carousel hero-carousel">
+<div class="pc-track">
+  <button type="button" class="pc-btn prev" aria-label="Anterior">‹</button>
+  <img src="/assets/sandro.jpg" alt="gitano">
+  <img src="/assets/sandro.jpg" alt="gitano">
+  <img src="/assets/sandro.jpg" alt="gitano">
+</div>
+</section>
+
+<section class="promo-carousel" aria-label="Promociones">
+  <button type="button" class="pc-btn prev" aria-label="Anterior">‹</button>
+  <div class="pc-track">
+    <!-- Products grid -->
+<section class="pc-slide" aria-label="Productos">
+  <!-- NUEVO: Card base de ejemplo -->
+  <article class="product-card"
+          data-id="pipa-1"
+          data-cat="PIPAS"
+          data-price="4500"
+          data-points="45">
+
+     <img src="/assets/capsula.jpg" alt="Pipa clásica">
+      <h4 class="product-title">Pipa clásica</h4>
+
+    <!-- NUEVO: precios separados -->
+    <p class="product-price">$4.500</p>
+    <p class="product-points">45 pts</p>
+
+    <p class="product-desc">Descripción genérica del producto.</p>
+
+    <!-- NUEVO: botón compatible con tu JS de carrito -->
+    <button type="button" class="add-btn btn">
+      Agregar
+    </button>
+  </article>
+
+  <!-- NUEVO: otra card -->
+  <article class="product-card"
+          data-id="picador-1"
+          data-cat="PICADORES"
+          data-price="3200"
+          data-points="32">
+    <img src="/assets/capsula.jpg" alt="Pipa clásica">
+    <h4 class="product-title">Picador aluminio</h4>
+    <p class="product-price">$3.200</p>
+    <p class="product-points">32 pts</p>
+    <p class="product-desc">Descripción genérica del producto.</p>
+    <button type="button" class="add-btn btn">Agregar</button>
+  </article>
+
+</section>
+<section class="pc-slide" aria-label="Productos">
+  <!-- NUEVO: Card base de ejemplo -->
+  <article class="product-card"
+          data-id="pipa-1"
+          data-cat="PIPAS"
+          data-price="4500"
+          data-points="45">
+    <img src="/assets/capsula.jpg" alt="Pipa clásica">
+    <h4 class="product-title">Pipa clásica</h4>
+
+    <!-- NUEVO: precios separados -->
+    <p class="product-price">$4.500</p>
+    <p class="product-points">45 pts</p>
+
+    <p class="product-desc">Descripción genérica del producto.</p>
+
+    <!-- NUEVO: botón compatible con tu JS de carrito -->
+    <button type="button" class="add-btn btn">
+      Agregar
+    </button>
+  </article>
+
+  <!-- NUEVO: otra card -->
+  <article class="product-card"
+          data-id="picador-1"
+          data-cat="PICADORES"
+          data-price="3200"
+          data-points="32">
+    <img src="/assets/capsula.jpg" alt="Pipa clásica">
+    <h4 class="product-title">Picador aluminio</h4>
+    <p class="product-price">$3.200</p>
+    <p class="product-points">32 pts</p>
+    <p class="product-desc">Descripción genérica del producto.</p>
+    <button type="button" class="add-btn btn">Agregar</button>
+  </article>
+
+</section>
+<section class="pc-slide" aria-label="Productos">
+  <!-- NUEVO: Card base de ejemplo -->
+  <article class="product-card"
+          data-id="pipa-1"
+          data-cat="PIPAS"
+          data-price="4500"
+          data-points="45">
+    <img src="/assets/capsula.jpg" alt="Pipa clásica">
+    <h4 class="product-title">Pipa clásica</h4>
+
+    <!-- NUEVO: precios separados -->
+    <p class="product-price">$4.500</p>
+    <p class="product-points">45 pts</p>
+
+    <p class="product-desc">Descripción genérica del producto.</p>
+
+    <!-- NUEVO: botón compatible con tu JS de carrito -->
+    <button type="button" class="add-btn btn">
+      Agregar
+    </button>
+  </article>
+
+  <!-- NUEVO: otra card -->
+  <article class="product-card"
+          data-id="picador-1"
+          data-cat="PICADORES"
+          data-price="3200"
+          data-points="32">
+    <img src="/assets/capsula.jpg" alt="Pipa clásica">
+    <h4 class="product-title">Picador aluminio</h4>
+    <p class="product-price">$3.200</p>
+    <p class="product-points">32 pts</p>
+    <p class="product-desc">Descripción genérica del producto.</p>
+    <button type="button" class="add-btn btn">Agregar</button>
+  </article>
+
+</section>
+<section class="pc-slide" aria-label="Productos">
+  <!-- NUEVO: Card base de ejemplo -->
+  <article class="product-card"
+          data-id="pipa-1"
+          data-cat="PIPAS"
+          data-price="4500"
+          data-points="45">
+    <img src="/assets/capsula.jpg" alt="Pipa clásica">
+    <h4 class="product-title">Pipa clásica</h4>
+
+    <!-- NUEVO: precios separados -->
+    <p class="product-price">$4.500</p>
+    <p class="product-points">45 pts</p>
+
+    <p class="product-desc">Descripción genérica del producto.</p>
+
+    <!-- NUEVO: botón compatible con tu JS de carrito -->
+    <button type="button" class="add-btn btn">
+      Agregar
+    </button>
+  </article>
+
+  <!-- NUEVO: otra card -->
+  <article class="product-card"
+          data-id="picador-1"
+          data-cat="PICADORES"
+          data-price="3200"
+          data-points="32">
+    <img src="/assets/capsula.jpg" alt="Pipa clásica">
+    <h4 class="product-title">Picador aluminio</h4>
+    <p class="product-price">$3.200</p>
+    <p class="product-points">32 pts</p>
+    <p class="product-desc">Descripción genérica del producto.</p>
+    <button type="button" class="add-btn btn">Agregar</button>
+  </article>
+
+</section>
+<section class="pc-slide" aria-label="Productos">
+  <!-- NUEVO: Card base de ejemplo -->
+  <article class="product-card"
+          data-id="pipa-1"
+          data-cat="PIPAS"
+          data-price="4500"
+          data-points="45">
+    <img src="/assets/capsula.jpg" alt="Pipa clásica">
+    <h4 class="product-title">Pipa clásica</h4>
+
+    <!-- NUEVO: precios separados -->
+    <p class="product-price">$4.500</p>
+    <p class="product-points">45 pts</p>
+
+    <p class="product-desc">Descripción genérica del producto.</p>
+
+    <!-- NUEVO: botón compatible con tu JS de carrito -->
+    <button type="button" class="add-btn btn">
+      Agregar
+    </button>
+  </article>
+
+  <!-- NUEVO: otra card -->
+  <article class="product-card"
+          data-id="picador-1"
+          data-cat="PICADORES"
+          data-price="3200"
+          data-points="32">
+    <img src="/assets/capsula.jpg" alt="Pipa clásica">
+    <h4 class="product-title">Picador aluminio</h4>
+    <p class="product-price">$3.200</p>
+    <p class="product-points">32 pts</p>
+    <p class="product-desc">Descripción genérica del producto.</p>
+    <button type="button" class="add-btn btn">Agregar</button>
+  </article>
+
+</section>
+<section class="pc-slide" aria-label="Productos">
+  <!-- NUEVO: Card base de ejemplo -->
+  <article class="product-card"
+          data-id="pipa-1"
+          data-cat="PIPAS"
+          data-price="4500"
+          data-points="45">
+    <img src="/assets/capsula.jpg" alt="Pipa clásica">
+    <h4 class="product-title">Pipa clásica</h4>
+
+    <!-- NUEVO: precios separados -->
+    <p class="product-price">$4.500</p>
+    <p class="product-points">45 pts</p>
+
+    <p class="product-desc">Descripción genérica del producto.</p>
+
+    <!-- NUEVO: botón compatible con tu JS de carrito -->
+    <button type="button" class="add-btn btn">
+      Agregar
+    </button>
+  </article>
+
+  <!-- NUEVO: otra card -->
+  <article class="product-card"
+          data-id="picador-1"
+          data-cat="PICADORES"
+          data-price="3200"
+          data-points="32">
+      <img src="/assets/capsula.jpg" alt="Pipa clásica">
+    <h4 class="product-title">Picador aluminio</h4>
+    <p class="product-price">$3.200</p>
+    <p class="product-points">32 pts</p>
+    <p class="product-desc">Descripción genérica del producto.</p>
+    <button type="button" class="add-btn btn">Agregar</button>
+  </article>
+
+</section>
+    <!-- Añade más .pc-slide según necesites -->
+  </div>
+  <button type="button" class="pc-btn next" aria-label="Siguiente">›</button>
+  <div class="pc-dots" aria-hidden="false"></div>
+</section>
+
+
+<section class="promo-carousel" aria-label="Promociones">
+  <button type="button" class="pc-btn prev" aria-label="Anterior">‹</button>
+  <div class="pc-track">
+    <!-- Products grid -->
+  <section class="pc-slide" aria-label="Productos">
+  <!-- NUEVO: Card base de ejemplo -->
+  <article class="product-card"
+          data-id="pipa-1"
+          data-cat="PIPAS"
+          data-price="4500"
+          data-points ="45">
+    <img src="/assets/capsula.jpg" alt="Pipa clásica">
+    <h4 class="product-title">Pipa clásica</h4>
+
+    <!-- NUEVO: precios separados -->
+    <p class="product-price">$4.500</p>
+    <p class="product-points">45 pts</p>
+
+    <p class="product-desc">Descripción genérica del producto.</p>
+
+    <!-- NUEVO: botón compatible con tu JS de carrito -->
+    <button type="button" class="add-btn btn">
+      Agregar
+    </button>
+  </article>
+
+  <!-- NUEVO: otra card -->
+  <article class="product-card"
+          data-id="picador-1"
+          data-cat="PICADORES"
+          data-price="3200"
+          data-points="32">
+    <img src="/assets/capsula.jpg" alt="Pipa clásica">
+    <h4 class="product-title">Picador aluminio</h4>
+    <p class="product-price">$3.200</p>
+    <p class="product-points">32 pts</p>
+    <p class="product-desc">Descripción genérica del producto.</p>
+    <button type="button" class="add-btn btn">Agregar</button>
+  </article>
+
+  </section>
+  <section class="pc-slide" aria-label="Productos">
+  <!-- NUEVO: Card base de ejemplo -->
+  <article class="product-card"
+          data-id="pipa-1"
+          data-cat="PIPAS"
+          data-price="4500"
+          data-points="45">
+    <img src="/assets/capsula.jpg" alt="Pipa clásica">
+    <h4 class="product-title">Pipa clásica</h4>
+
+    <!-- NUEVO: precios separados -->
+    <p class="product-price">$4.500</p>
+    <p class="product-points">45 pts</p>
+
+    <p class="product-desc">Descripción genérica del producto.</p>
+
+    <!-- NUEVO: botón compatible con tu JS de carrito -->
+    <button type="button" class="add-btn btn">
+      Agregar
+    </button>
+  </article>
+  <!-- NUEVO: otra card -->
+  <article class="product-card"
+          data-id="picador-1"
+          data-cat="PICADORES"
+          data-price="3200"
+          data-points="32">
+    <img src="/assets/capsula.jpg" alt="Pipa clásica">
+    <h4 class="product-title">Picador aluminio</h4>
+    <p class="product-price">$3.200</p>
+    <p class="product-points">32 pts</p>
+    <p class="product-desc">Descripción genérica del producto.</p>
+    <button type="button" class="add-btn btn">Agregar</button>
+  </article>
+  </section>
+  <section class="pc-slide" aria-label="Productos">
+  <!-- NUEVO: Card base de ejemplo -->
+  <article class="product-card"
+          data-id="pipa-1"
+          data-cat="PIPAS"
+          data-price="4500"
+          data-points="45">
+    <img src="/assets/capsula.jpg" alt="Pipa clásica">
+    <h4 class="product-title">Pipa clásica</h4>
+
+    <!-- NUEVO: precios separados -->
+    <p class="product-price">$4.500</p>
+    <p class="product-points">45 pts</p>
+
+    <p class="product-desc">Descripción genérica del producto.</p>
+
+    <!-- NUEVO: botón compatible con tu JS de carrito -->
+    <button type="button" class="add-btn btn">
+      Agregar
+    </button>
+  </article>
+
+  <!-- NUEVO: otra card -->
+  <article class="product-card"
+          data-id="picador-1"
+          data-cat="PICADORES"
+          data-price="3200"
+          data-points="32">
+    <img src="/assets/capsula.jpg" alt="Pipa clásica">
+    <h4 class="product-title">Picador aluminio</h4>
+    <p class="product-price">$3.200</p>
+    <p class="product-points">32 pts</p>
+    <p class="product-desc">Descripción genérica del producto.</p>
+    <button type="button" class="add-btn btn">Agregar</button>
+  </article>
+
+  </section>
+  <section class="pc-slide" aria-label="Productos">
+
+  <!-- NUEVO: Card base de ejemplo -->
+  <article class="product-card"
+          data-id="pipa-1"
+          data-cat="PIPAS"
+          data-price="4500"
+          data-points="45">
+    <img src="/assets/capsula.jpg" alt="Pipa clásica">
+    <h4 class="product-title">Pipa clásica</h4>
+
+    <!-- NUEVO: precios separados -->
+    <p class="product-price">$4.500</p>
+    <p class="product-points">45 pts</p>
+
+    <p class="product-desc">Descripción genérica del producto.</p>
+
+    <!-- NUEVO: botón compatible con tu JS de carrito -->
+    <button type="button" class="add-btn btn">
+      Agregar
+    </button>
+  </article>
+
+  <!-- NUEVO: otra card -->
+  <article class="product-card"
+          data-id="picador-1"
+          data-cat="PICADORES"
+          data-price="3200"
+          data-points="32">
+    <img src="/assets/capsula.jpg" alt="Pipa clásica">
+    <h4 class="product-title">Picador aluminio</h4>
+    <p class="product-price">$3.200</p>
+    <p class="product-points">32 pts</p>
+    <p class="product-desc">Descripción genérica del producto.</p>
+    <button type="button" class="add-btn btn">Agregar</button>
+  </article>
+  
+  </section>
+  <section class="pc-slide" aria-label="Productos">
+
+  <!-- NUEVO: Card base de ejemplo -->
+  <article class="product-card"
+          data-id="pipa-1"
+          data-cat="PIPAS"
+          data-price="4500"
+          data-points="45">
+    <img src="/assets/capsula.jpg" alt="Pipa clásica">
+    <h4 class="product-title">Pipa clásica</h4>
+
+    <!-- NUEVO: precios separados -->
+    <p class="product-price">$4.500</p>
+    <p class="product-points">45 pts</p>
+
+    <p class="product-desc">Descripción genérica del producto.</p>
+
+    <!-- NUEVO: botón compatible con tu JS de carrito -->
+    <button type="button" class="add-btn btn">
+      Agregar
+    </button>
+  </article>
+
+  <!-- NUEVO: otra card -->
+  <article class="product-card"
+          data-id="picador-1"
+          data-cat="PICADORES"
+          data-price="3200"
+          data-points="32">
+    <img src="/assets/capsula.jpg" alt="Pipa clásica">
+    <h4 class="product-title">Picador aluminio</h4>
+    <p class="product-price">$3.200</p>
+    <p class="product-points">32 pts</p>
+    <p class="product-desc">Descripción genérica del producto.</p>
+    <button type="button" class="add-btn btn">Agregar</button>
+  </article>
+  
+  </section>
+  <section class="pc-slide" aria-label="Productos">
+
+  <!-- NUEVO: Card base de ejemplo -->
+  <article class="product-card"
+          data-id="pipa-1"
+          data-cat="PIPAS"
+          data-price="4500"
+          data-points="45">
+    <img src="/assets/capsula.jpg" alt="Pipa clásica">
+    <h4 class="product-title">Pipa clásica</h4>
+
+    <!-- NUEVO: precios separados -->
+    <p class="product-price">$4.500</p>
+    <p class="product-points">45 pts</p>
+
+    <p class="product-desc">Descripción genérica del producto.</p>
+
+    <!-- NUEVO: botón compatible con tu JS de carrito -->
+    <button type="button" class="add-btn btn">
+      Agregar
+    </button>
+  </article>
+
+  <!-- NUEVO: otra card -->
+  <article class="product-card"
+          data-id="picador-1"
+          data-cat="PICADORES"
+          data-price="3200"
+          data-points="32">
+    <img src="/assets/capsula.jpg" alt="Pipa clásica">
+    <h4 class="product-title">Picador aluminio</h4>
+    <p class="product-price">$3.200</p>
+    <p class="product-points">32 pts</p>
+    <p class="product-desc">Descripción genérica del producto.</p>
+    <button type="button" class="add-btn btn">Agregar</button>
+  </article>
+  
+  </section>
+    </div>
+    <button type="button" class="pc-btn next" aria-label="Siguiente">›</button>
+    <div class="pc-dots" aria-hidden="false"></div>
+  </section>
+
+
+<footer class="footer-primary" role="contentinfo" aria-label="Pie de página">
+  <p>&copy; 2024 Awka Liwen. Todos los derechos reservados.</p>
+  <p>&copy; 2024 Awka Liwen. Todos los derechos reservados.</p>
+  <p>&copy; 2024 Awka Liwen. Todos los derechos reservados.</p>
+  <p>&copy; 2024 Awka Liwen. Todos los derechos reservados.</p>
+
+<script type="module" src="/js/catalogo.js"></script>
+</body>
+</html>
+
+
+
+             

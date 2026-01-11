@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="manifest" href="/manifest.json">
+      <meta name="theme-color" content="#2b6cb0">
+      <title>Login</title>
+      <link rel="stylesheet" href="/public/css/style-login.css">
+</head>
+<body>
+      <form class="formulario" id="loginForm" role="form" aria-labelledby="loginTitle">
+      <h1 id="loginTitle">Iniciar sesión</h1>
+      <div class="user-dat">
+      <input type="email" id="correo" name="email" class="form-control" autocomplete="email" required aria-describedby="mensajeLoginError" placeholder=" " />
+      <label for="correo">Email</label>
+      </div>
+      <div class="user-dat">
+      <input type="password" id="contraseña" name="password" class="form-control" autocomplete="current-password" required aria-describedby="mensajeLoginError" placeholder=" " />
+      <label for="contraseña">Contraseña</label>
+      </div>
+      <div class="recordar"><a href="forgot.html">¿ Olvide mi contraseña ?</a>
+      </div>
+      <button type="submit" id="button-login" class="btn btn--primary" aria-label="Ingresar">Ingresar</button>
+      <div class="login">Quiero ir a <a href="register.html">Registrarme</a>
+      </div>
+    </form>
+    <p id="mensajeLoginError" style="color: red;"></p>
+    
+      <script type="module" src="js/auth-login.js"></script>    <!-- Para login.html -->
+          
+</body>
+</html>
